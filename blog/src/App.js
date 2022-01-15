@@ -1,15 +1,30 @@
 import './App.css';
-import logo from './logo.svg';
+import { useState } from 'react';
 
 function App() {
-  const posts = { color: 'white', fontSize: '20px' };
+  const [title,titleEdit] = useState(['React state','Vue state','Dart?']);
+  // const posts = 'React vs Vue';
 
   return (
     <div className="App">
       <div className="black-nav">
-        <div style={posts}>Dev Blog</div>
+        <div>Dev Blog</div>
       </div>
-      <img src={logo} alt="logo" />
+      <div className="list">
+        <h3>{title[0]}</h3>
+        <p>1월 15일 발행</p>
+        <hr />
+      </div>
+      <div className="list">
+        <h3>{title[1]}</h3>
+        <p>1월 15일 발행</p>
+        <hr />
+      </div>
+      <div className="list">
+        <h3>{title[2]}</h3>
+        <p>1월 15일 발행</p>
+        <hr />
+      </div>
     </div>
   );
 }
