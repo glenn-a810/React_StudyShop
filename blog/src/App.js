@@ -2,7 +2,8 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
-  const [title,titleEdit] = useState(['React state','Vue state','Dart?']);
+  let [title, titleEdit] = useState(['React state', 'Vue state', 'Dart?']);
+  let [like, likeEdit] = useState(0)
   // const posts = 'React vs Vue';
 
   return (
@@ -11,7 +12,9 @@ function App() {
         <div>Dev Blog</div>
       </div>
       <div className="list">
-        <h3>{title[0]}</h3>
+        <h3>
+          {title[0]} <span onClick={() => {likeEdit(like++)}}> 👍 </span> {like}
+        </h3>
         <p>1월 15일 발행</p>
         <hr />
       </div>
