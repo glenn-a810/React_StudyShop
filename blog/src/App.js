@@ -1,10 +1,16 @@
-import './App.css';
-import { useState } from 'react';
+import './App.css'
+import { useState } from 'react'
 
 function App() {
-  let [title, titleEdit] = useState(['React state', 'Vue state', 'Dart?']);
-  let [like, likeEdit] = useState(0);
+  let [title, titleEdit] = useState(['React state', 'Vue state', 'Dart?'])
+  let [like, likeEdit] = useState(0)
   // const posts = 'React vs Vue';
+
+  const titleChange = () => {
+    let newArray = [...title]
+    newArray[0] = '바뀌나?'
+    titleEdit(newArray)
+  }
 
   return (
     <div className="App">
@@ -16,7 +22,7 @@ function App() {
           {title[0]}{' '}
           <span
             onClick={() => {
-              likeEdit(like++);
+              likeEdit(like++)
             }}
           >
             {' '}
@@ -25,13 +31,7 @@ function App() {
           {like}
         </h3>
         <p>1월 15일 발행</p>
-        <button
-          onClick={() => {
-            titleEdit((title = ['바뀌나?']));
-          }}
-        >
-          제목 변경
-        </button>
+        <button onClick={titleChange}>제목 변경</button>
         <hr />
       </div>
       <div className="list">
@@ -45,7 +45,7 @@ function App() {
         <hr />
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
