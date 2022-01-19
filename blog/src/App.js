@@ -6,11 +6,11 @@ function App() {
   let [like, likeEdit] = useState(0)
   // const posts = 'React vs Vue';
 
-  const titleChange = () => {
-    let newArray = [...title]
-    newArray[0] = '바뀌나?'
-    titleEdit(newArray)
-  }
+  // const titleChange = () => {
+  //   let newArray = [...title]
+  //   newArray[0] = '바뀌나?'
+  //   titleEdit(newArray)
+  // }
 
   return (
     <div className="App">
@@ -31,7 +31,7 @@ function App() {
           {like}
         </h3>
         <p>1월 15일 발행</p>
-        <button onClick={titleChange}>제목 변경</button>
+        {/*<button onClick={titleChange}>제목 변경</button>*/}
         <hr />
       </div>
       <div className="list">
@@ -44,6 +44,18 @@ function App() {
         <p>1월 15일 발행</p>
         <hr />
       </div>
+
+      <Modal />
+    </div>
+  )
+}
+
+function Modal() {
+  return (
+    <div className="modal">
+      <h2>제목</h2>
+      <p>날짜</p>
+      <p>상세내용</p>
     </div>
   )
 }

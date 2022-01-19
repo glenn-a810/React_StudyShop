@@ -12,6 +12,12 @@ body {
     'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
 }
 
+.modal {
+    padding: 20px;
+    background: #eee;
+    margin-top: 20px;
+}
+
 .black-nav {
   background: black;
   width: 100%;
