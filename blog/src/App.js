@@ -4,6 +4,7 @@ import { useState } from 'react'
 function App() {
   let [title, titleEdit] = useState(['React state', 'Vue state', 'Dart?'])
   let [like, likeEdit] = useState(0)
+  let [modal, modalEdit] = useState(false)
   // const posts = 'React vs Vue';
 
   // const titleChange = () => {
@@ -45,7 +46,17 @@ function App() {
         <hr />
       </div>
 
-      <Modal />
+      <button
+        onClick={() => {
+          modal === false ? modalEdit(true) : modalEdit(false)
+        }}
+      >
+        Modal
+      </button>
+
+      {modal === true ? <Modal /> : null}
+
+      {/*<Modal />*/}
     </div>
   )
 }
