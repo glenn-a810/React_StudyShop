@@ -3,7 +3,6 @@ import { useState } from 'react'
 
 function App() {
   let [title, titleEdit] = useState(['React state', 'Vue state', 'Dart?'])
-  let [like, likeEdit] = useState([0, 0, 0])
   let [modal, modalEdit] = useState(false)
   let [selectTitle, selectTitleEdit] = useState(0)
   let [inputValue, inputValueEdit] = useState('')
