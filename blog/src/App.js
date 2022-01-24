@@ -6,6 +6,7 @@ function App() {
   let [like, likeEdit] = useState([0, 0, 0])
   let [modal, modalEdit] = useState(false)
   let [selectTitle, selectTitleEdit] = useState(0)
+  let [inputValue, inputValueEdit] = useState('')
   // const posts = 'React vs Vue';
 
   // const titleChange = () => {
@@ -20,9 +21,9 @@ function App() {
         <div>Dev Blog</div>
       </div>
 
-      {title.map((key,id) => {
+      {title.map((key, id) => {
         return (
-          <div className="list">
+          <div className="list" key={id}>
             <h3
               onClick={() => {
                 // modal === false ? modalEdit(true) : modalEdit(false)
@@ -37,6 +38,9 @@ function App() {
         )
       })}
 
+      {/*<input onChange={(e)=>{inputValueEdit(e.target.value)}} />*/}
+
+
       <button
         onClick={() => {
           modal === false ? modalEdit(true) : modalEdit(false)
@@ -45,7 +49,9 @@ function App() {
         Modal
       </button>
 
-      {modal === true ? <Modal title={title} selectTitle={selectTitle} /> : null}
+      {modal === true ? (
+        <Modal title={title} selectTitle={selectTitle} />
+      ) : null}
 
       {/*/!*<Modal />*!/*/}
     </div>
