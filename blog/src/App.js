@@ -7,13 +7,6 @@ function App() {
   let [modal, modalEdit] = useState(false)
   let [selectTitle, selectTitleEdit] = useState(0)
   let [inputValue, inputValueEdit] = useState('')
-  // const posts = 'React vs Vue';
-
-  // const titleChange = () => {
-  //   let newArray = [...title]
-  //   newArray[0] = '바뀌나?'
-  //   titleEdit(newArray)
-  // }
 
   return (
     <div className="App">
@@ -26,7 +19,6 @@ function App() {
           <div className="list" key={id}>
             <h3
               onClick={() => {
-                // modal === false ? modalEdit(true) : modalEdit(false)
                 selectTitleEdit(id)
               }}
             >
@@ -53,7 +45,6 @@ function App() {
         <Modal title={title} selectTitle={selectTitle} />
       ) : null}
 
-      {/*/!*<Modal />*!/*/}
     </div>
   )
 }
