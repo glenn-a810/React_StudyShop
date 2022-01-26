@@ -30,7 +30,7 @@ function App() {
         )
       })}
 
-      {/*<input onChange={(e)=>{inputValueEdit(e.target.value)}} />*/}
+      <input onChange={(e)=>{inputValueEdit(e.target.value)}} />
 
 
       <button
