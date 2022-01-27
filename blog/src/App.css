@@ -8,14 +8,33 @@
 }
 
 body {
-  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
-    'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+    'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR',
+    'Malgun Gothic', sans-serif;
 }
 
 .modal {
-    padding: 20px;
-    background: #eee;
-    margin-top: 20px;
+  padding: 20px;
+  background: #eee;
+  margin-top: 20px;
+}
+
+.publish {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.publish input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.publish button {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
 }
 
 .black-nav {
