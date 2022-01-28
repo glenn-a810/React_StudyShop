@@ -1,5 +1,5 @@
 import './App.css'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 function App() {
   let [title, titleEdit] = useState(['React state', 'Vue state', 'Dart?'])
@@ -32,7 +32,6 @@ function App() {
 
       {/*<input onChange={(e)=>{inputValueEdit(e.target.value)}} />*/}
 
-
       <button
         onClick={() => {
           modal === false ? modalEdit(true) : modalEdit(false)
@@ -41,10 +40,11 @@ function App() {
         Modal
       </button>
 
+      <Profile />
+
       {modal === true ? (
         <Modal title={title} selectTitle={selectTitle} />
       ) : null}
-
     </div>
   )
 }
@@ -57,6 +57,32 @@ function Modal(props) {
       <p>상세내용</p>
     </div>
   )
+}
+
+class Profile extends React.Component {
+  constructor() {
+    super()
+    this.state = { name: '루이', age: 11 }
+  }
+
+  changeName() {
+    this.setState({ name: '오드' })
+  }
+
+  render() {
+    return (
+      <div>
+        <h3>냥놈1호 : {this.state.name}</h3>
+        <button
+          onClick={() => {
+            this.changeName()
+          }}
+        >
+          버튼이벤트
+        </button>
+      </div>
+    )
+  }
 }
 
 export default App
