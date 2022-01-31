@@ -1,7 +1,11 @@
 import "./App.css";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import { useState } from "react";
+import data from "./asset/data";
 
 function App() {
+  const [shoes, shoesEdit] = useState(data);
+
   return (
     <div className="App">
       <Navbar bg="dark" variant="dark">
@@ -34,8 +38,9 @@ function App() {
               width="100%"
               alt="1"
             />
-            <h4>상품명</h4>
-            <p>상품설명 & 가격</p>
+            <h4>{shoes[0].title}</h4>
+            <p>{shoes[0].content}</p>
+            <p>{shoes[0].price}</p>
           </div>
           <div className="col-md-4">
             <img
@@ -43,8 +48,9 @@ function App() {
               width="100%"
               alt="2"
             />
-            <h4>상품명</h4>
-            <p>상품설명 & 가격</p>
+            <h4>{shoes[1].title}</h4>
+            <p>{shoes[1].content}</p>
+            <p>{shoes[1].price}</p>
           </div>
           <div className="col-md-4">
             <img
@@ -52,8 +58,9 @@ function App() {
               width="100%"
               alt="3"
             />
-            <h4>상품명</h4>
-            <p>상품설명 & 가격</p>
+            <h4>{shoes[2].title}</h4>
+            <p>{shoes[2].content}</p>
+            <p>{shoes[2].price}</p>
           </div>
         </div>
       </div>
