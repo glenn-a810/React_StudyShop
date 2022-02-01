@@ -32,40 +32,58 @@ function App() {
 
       <div className="container">
         <div className="row">
-          <div className="col-md-4">
-            <img
-              src="https://codingapple1.github.io/shop/shoes1.jpg"
-              width="100%"
-              alt="1"
-            />
-            <h4>{shoes[0].title}</h4>
-            <p>{shoes[0].content}</p>
-            <p>{shoes[0].price}</p>
-          </div>
-          <div className="col-md-4">
-            <img
-              src="https://codingapple1.github.io/shop/shoes2.jpg"
-              width="100%"
-              alt="2"
-            />
-            <h4>{shoes[1].title}</h4>
-            <p>{shoes[1].content}</p>
-            <p>{shoes[1].price}</p>
-          </div>
-          <div className="col-md-4">
-            <img
-              src="https://codingapple1.github.io/shop/shoes3.jpg"
-              width="100%"
-              alt="3"
-            />
-            <h4>{shoes[2].title}</h4>
-            <p>{shoes[2].content}</p>
-            <p>{shoes[2].price}</p>
-          </div>
+          {/*<div className="col-md-4">*/}
+          {/*  <img*/}
+          {/*    src="https://codingapple1.github.io/shop/shoes1.jpg"*/}
+          {/*    width="100%"*/}
+          {/*    alt="1"*/}
+          {/*  />*/}
+          {/*  <h4>{shoes[0].title}</h4>*/}
+          {/*  <p>{shoes[0].content}</p>*/}
+          {/*  <p>{shoes[0].price}</p>*/}
+          {/*</div>*/}
+          {/*<div className="col-md-4">*/}
+          {/*  <img*/}
+          {/*    src="https://codingapple1.github.io/shop/shoes2.jpg"*/}
+          {/*    width="100%"*/}
+          {/*    alt="2"*/}
+          {/*  />*/}
+          {/*  <h4>{shoes[1].title}</h4>*/}
+          {/*  <p>{shoes[1].content}</p>*/}
+          {/*  <p>{shoes[1].price}</p>*/}
+          {/*</div>*/}
+          {/*<div className="col-md-4">*/}
+          {/*  <img*/}
+          {/*    src="https://codingapple1.github.io/shop/shoes3.jpg"*/}
+          {/*    width="100%"*/}
+          {/*    alt="3"*/}
+          {/*  />*/}
+          {/*  <h4>{shoes[2].title}</h4>*/}
+          {/*  <p>{shoes[2].content}</p>*/}
+          {/*  <p>{shoes[2].price}</p>*/}
+          {/*</div>*/}
+          {data.map((key, id) => {
+            return <Item data={data[id]} id={id} />;
+          })}
         </div>
       </div>
     </div>
   );
+
+  function Item(props) {
+    return (
+      <div className="col-md-4">
+        <img
+          src={"https://codingapple1.github.io/shop/shoes" + (props.id+1) + ".jpg"}
+          width="100%"
+          alt={ props.key }
+        />
+        <h4>{props.data.title}</h4>
+        <p>{props.data.content}</p>
+        <p>{props.data.price}원</p>
+      </div>
+    );
+  }
 }
 
 export default App;
