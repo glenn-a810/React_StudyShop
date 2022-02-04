@@ -6,7 +6,7 @@ import { Link, Route, Switch } from "react-router-dom";
 import Detail from "./Detail";
 
 function App() {
-  // const [shoes, shoesEdit] = useState(data);
+  const [shoes, shoesEdit] = useState(data);
 
   return (
     <div className="App">
@@ -47,8 +47,8 @@ function App() {
           </div>
         </Route>
 
-        <Route path="/detail">
-          <Detail />
+        <Route path="/detail/:params">
+          <Detail shoes={shoes} />
         </Route>
 
         <Route path="/:id">
