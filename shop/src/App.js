@@ -49,6 +49,7 @@ function App() {
 
         <Route path="/detail/:params">
           <Detail shoes={shoes} />
+          {/*<Detail shoes={data} />*/}
         </Route>
 
         <Route path="/:id">
