@@ -1,15 +1,5 @@
 import React from "react";
 import { useHistory, useParams } from "react-router-dom";
-import styled from "styled-components";
-
-let Box = styled.div`
-  padding: 20px;
-`;
-
-let Title = styled.h4`
-  font-size: 25px;
-  color: ${(props) => props.textColor};
-`;
 
 function Detail(props) {
   const history = useHistory();
@@ -19,10 +9,6 @@ function Detail(props) {
 
   return (
     <div className="container">
-      <Box>
-        <Title textColor={"red"}>Detail</Title>
-        <Title textColor="blue">Detail</Title>
-      </Box>
       <div className="row">
         <div className="col-md-6">
           <img
