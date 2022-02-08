@@ -1,0 +1,35 @@
+$mainColor: #ff0000;
+
+.red {
+  color: $mainColor;
+}
+
+//div.container {
+//  h4 {
+//    color: blue;
+//  }
+//  p {
+//    color: green;
+//  }
+//}
+@mixin alertToast() {
+  background-color: #eeeeee;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+
+.detailAlert {
+  @include alertToast();
+}
+
+.detailAlert-yellow {
+  @extend .detailAlert;
+  background-color: #ffe591;
+}
+
+.detailAlert p {
+  margin-bottom: 0px;
+}
