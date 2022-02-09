@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import styled from "styled-components";
 import "./Detail.scss";
@@ -13,6 +13,11 @@ let Title = styled.h4`
 `;
 
 function Detail(props) {
+  useEffect(()=>{
+    // const timer = setTimeout(()=>{},2000)
+    // return ()=>{}
+  })
+
   const history = useHistory();
   const { params } = useParams();
 
