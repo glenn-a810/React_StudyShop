@@ -13,10 +13,14 @@ let Title = styled.h4`
 `;
 
 function Detail(props) {
-  useEffect(()=>{
-    // const timer = setTimeout(()=>{},2000)
+  const [hideModal, hideModalEdit] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      hideModalEdit(false);
+    }, 2000);
     // return ()=>{}
-  })
+  });
 
   const history = useHistory();
   const { params } = useParams();
@@ -29,9 +33,14 @@ function Detail(props) {
         <Title className="red">Detail</Title>
       </Box>
 
-      <div className="detailAlert-yellow">
-        <p>재고가 얼마 남지 않았습니다.</p>
-      </div>
+      {hideModal === true ? (
+        <div className="detailAlert-yellow">
+          <p>재고가 얼마 남지 않았습니다.</p>
+        </div>
+      ) : null}
+      {/*<div className="detailAlert-yellow">*/}
+      {/*  <p>재고가 얼마 남지 않았습니다.</p>*/}
+      {/*</div>*/}
 
       <div className="row">
         <div className="col-md-6">
