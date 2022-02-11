@@ -38,9 +38,6 @@ function Detail(props) {
           <p>재고가 얼마 남지 않았습니다.</p>
         </div>
       ) : null}
-      {/*<div className="detailAlert-yellow">*/}
-      {/*  <p>재고가 얼마 남지 않았습니다.</p>*/}
-      {/*</div>*/}
 
       <div className="row">
         <div className="col-md-6">

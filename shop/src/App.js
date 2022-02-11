@@ -37,7 +37,7 @@ function App() {
           <div className="container">
             <div className="row">
               {data.map((key, id) => {
-                return <Item data={data[id]} id={id} />;
+                return <Item data={data[id]} id={id} key={id} />;
               })}
             </div>
           </div>
