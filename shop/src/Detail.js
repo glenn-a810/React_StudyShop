@@ -14,13 +14,17 @@ let Title = styled.h4`
 
 function Detail(props) {
   const [hideModal, hideModalEdit] = useState(true);
+  const [inputData, inputDataEdit] = useState("");
 
   useEffect(() => {
     const timer = setTimeout(() => {
       hideModalEdit(false);
     }, 2000);
-    // return ()=>{}
-  });
+    console.log("rerendering");
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [hideModal]);
 
   const history = useHistory();
   const { params } = useParams();
@@ -32,13 +36,17 @@ function Detail(props) {
       <Box>
         <Title className="red">Detail</Title>
       </Box>
-
+      {inputData}&nbsp;
+      <input
+        onChange={(e) => {
+          inputDataEdit(e.target.value);
+        }}
+      />
       {hideModal === true ? (
         <div className="detailAlert-yellow">
           <p>재고가 얼마 남지 않았습니다.</p>
         </div>
       ) : null}
-
       <div className="row">
         <div className="col-md-6">
           <img
