@@ -4,6 +4,7 @@ import { useState } from "react";
 import data from "./asset/data";
 import { Link, Route, Switch } from "react-router-dom";
 import Detail from "./Detail";
+import axios from "axios";
 
 function App() {
   const [shoes, shoesEdit] = useState(data);
@@ -14,8 +15,12 @@ function App() {
         <Container>
           <Navbar.Brand>Dev Shop</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/detail">Detail</Nav.Link>
+            <Nav.Link as={Link} to="/">
+              Home
+            </Nav.Link>
+            <Nav.Link as={Link} to="/detail">
+              Detail
+            </Nav.Link>
             <Nav.Link>Pricing</Nav.Link>
           </Nav>
         </Container>
@@ -40,6 +45,22 @@ function App() {
                 return <Item data={data[id]} id={id} key={id} />;
               })}
             </div>
+            <button
+              onClick={() => {
+                axios
+                  .get("https://codingapple1.github.io/shop/data2.json")
+                  .then((res) => {
+                    console.log(res.data);
+                    data.push(...res.data)
+                  })
+                  .catch((e) => {
+                    console.log(e);
+                  });
+              }}
+              className="btn btn-primary"
+            >
+              더보기
+            </button>
           </div>
         </Route>
 
