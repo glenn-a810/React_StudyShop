@@ -41,8 +41,8 @@ function App() {
 
           <div className="container">
             <div className="row">
-              {data.map((key, id) => {
-                return <Item data={data[id]} id={id} key={id} />;
+              {shoes.map((key, id) => {
+                return <Item data={shoes[id]} id={id} key={id} />;
               })}
             </div>
             <button
@@ -50,8 +50,11 @@ function App() {
                 axios
                   .get("https://codingapple1.github.io/shop/data2.json")
                   .then((res) => {
-                    console.log(res.data);
-                    data.push(...res.data)
+                    // console.log(res.data);
+                    // data.push(...res.data);
+                    // console.log(data);
+                    shoesEdit([...shoes, ...res.data]);
+                    console.log(shoes);
                   })
                   .catch((e) => {
                     console.log(e);
