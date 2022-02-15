@@ -17,6 +17,7 @@ function Detail(props) {
   const [inputData, inputDataEdit] = useState("");
 
   useEffect(() => {
+    // axios.get('') // 최초 렌더링, 업데이트 시 실행, 업데이트 시 실행안되게 하려면 deps에 []
     const timer = setTimeout(() => {
       hideModalEdit(false);
     }, 2000);

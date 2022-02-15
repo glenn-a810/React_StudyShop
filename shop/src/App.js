@@ -47,12 +47,11 @@ function App() {
             </div>
             <button
               onClick={() => {
+                // axios.post("", { id: "test", pw: "1234" });
+
                 axios
                   .get("https://codingapple1.github.io/shop/data2.json")
                   .then((res) => {
-                    // console.log(res.data);
-                    // data.push(...res.data);
-                    // console.log(data);
                     shoesEdit([...shoes, ...res.data]);
                     console.log(shoes);
                   })
