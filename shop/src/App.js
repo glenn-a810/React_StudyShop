@@ -8,6 +8,7 @@ import axios from "axios";
 
 function App() {
   const [shoes, shoesEdit] = useState(data);
+  const [inventory, inventoryEdit] = useState([10, 11, 12]);
 
   return (
     <div className="App">
@@ -67,7 +68,7 @@ function App() {
         </Route>
 
         <Route path="/detail/:params">
-          <Detail shoes={shoes} />
+          <Detail shoes={shoes} inventory={inventory} inventoryEdit={inventoryEdit} />
           {/*<Detail shoes={data} />*/}
         </Route>
 

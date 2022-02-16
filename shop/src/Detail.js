@@ -60,6 +60,9 @@ function Detail(props) {
           <h4 className="pt-5">{findItemId.title}</h4>
           <p>{findItemId.content}</p>
           <p>{findItemId.price}원</p>
+
+          <Info inventory={props.inventory}></Info>
+
           <button
             className="btn btn-danger"
             onClick={() => {
@@ -70,11 +73,19 @@ function Detail(props) {
             뒤로가기
           </button>
           &nbsp;
-          <button className="btn btn-danger">주문하기</button>
+          <button className="btn btn-danger" onClick={()=>{
+            props.inventoryEdit([9,11,12])
+          }}>주문하기</button>
         </div>
       </div>
     </div>
   );
+}
+
+function Info(props){
+  return(
+      <p>재고 : {props.inventory[0]}</p>
+  )
 }
 
 export default Detail;
