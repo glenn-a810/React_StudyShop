@@ -66,7 +66,6 @@ function Detail(props) {
           <button
             className="btn btn-danger"
             onClick={() => {
-              // history.goBack();
               history.push("/");
             }}
           >

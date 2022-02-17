@@ -48,8 +48,6 @@ function App() {
             </div>
             <button
               onClick={() => {
-                // axios.post("", { id: "test", pw: "1234" });
-
                 axios
                   .get("https://codingapple1.github.io/shop/data2.json")
                   .then((res) => {
@@ -69,7 +67,6 @@ function App() {
 
         <Route path="/detail/:params">
           <Detail shoes={shoes} inventory={inventory} inventoryEdit={inventoryEdit} />
-          {/*<Detail shoes={data} />*/}
         </Route>
 
         <Route path="/:id">
