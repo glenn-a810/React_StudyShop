@@ -1,10 +1,12 @@
 import "./App.css";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
-import { useState } from "react";
+import React, { useContext, useState } from "react";
 import data from "./asset/data";
 import { Link, Route, Switch } from "react-router-dom";
 import Detail from "./Detail";
 import axios from "axios";
+
+export const inventoryContext = React.createContext();
 
 function App() {
   const [shoes, shoesEdit] = useState(data);
@@ -41,11 +43,13 @@ function App() {
           </div>
 
           <div className="container">
-            <div className="row">
-              {shoes.map((key, id) => {
-                return <Item data={shoes[id]} id={id} key={id} />;
-              })}
-            </div>
+            <inventoryContext.Provider value={inventory}>
+              <div className="row">
+                {shoes.map((key, id) => {
+                  return <Item data={shoes[id]} id={id} key={id} />;
+                })}
+              </div>
+            </inventoryContext.Provider>
             <button
               onClick={() => {
                 axios
@@ -66,7 +70,13 @@ function App() {
         </Route>
 
         <Route path="/detail/:params">
-          <Detail shoes={shoes} inventory={inventory} inventoryEdit={inventoryEdit} />
+          <inventoryContext.Provider value={inventory}>
+            <Detail
+              shoes={shoes}
+              inventory={inventory}
+              inventoryEdit={inventoryEdit}
+            />
+          </inventoryContext.Provider>
         </Route>
 
         <Route path="/:id">
@@ -77,6 +87,8 @@ function App() {
   );
 
   function Item(props) {
+    const inventory = useContext(inventoryContext);
+
     return (
       <div className="col-md-4">
         <img
@@ -91,6 +103,7 @@ function App() {
         <h4>{props.data.title}</h4>
         <p>{props.data.content}</p>
         <p>{props.data.price}원</p>
+        {inventory[props.id]}
       </div>
     );
   }

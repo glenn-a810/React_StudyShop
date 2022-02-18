@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import styled from "styled-components";
 import "./Detail.scss";
+import {inventoryContext} from './App'
 
 let Box = styled.div`
   padding-top: 30px;
@@ -15,6 +16,7 @@ let Title = styled.h4`
 function Detail(props) {
   const [hideModal, hideModalEdit] = useState(true);
   const [inputData, inputDataEdit] = useState("");
+  const inventory = useContext(inventoryContext)
 
   useEffect(() => {
     // axios.get('') // 최초 렌더링, 업데이트 시 실행, 업데이트 시 실행안되게 하려면 deps에 []
@@ -62,6 +64,7 @@ function Detail(props) {
           <p>{findItemId.price}원</p>
 
           <Info inventory={props.inventory}></Info>
+          {inventory}
 
           <button
             className="btn btn-danger"
