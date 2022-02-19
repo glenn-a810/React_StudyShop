@@ -70,13 +70,11 @@ function App() {
         </Route>
 
         <Route path="/detail/:params">
-          <inventoryContext.Provider value={inventory}>
             <Detail
               shoes={shoes}
               inventory={inventory}
               inventoryEdit={inventoryEdit}
             />
-          </inventoryContext.Provider>
         </Route>
 
         <Route path="/:id">
