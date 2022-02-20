@@ -1,5 +1,14 @@
 $mainColor: #ff0000;
 
+.tapTransition-enter {
+  opacity: 0;
+}
+
+.tapTransition-enter-active {
+  opacity: 1;
+  transition: all 2000ms;
+}
+
 .red {
   color: $mainColor;
 }
