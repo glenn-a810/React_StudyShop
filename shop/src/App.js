@@ -24,7 +24,12 @@ function App() {
             <Nav.Link as={Link} to="/detail">
               Detail
             </Nav.Link>
-            <Nav.Link>Pricing</Nav.Link>
+            <Nav.Link as={Link} to="/detail/0">
+              Detail0
+            </Nav.Link>
+            <Nav.Link as={Link} to="/detail/1">
+              Detail1
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -70,11 +75,11 @@ function App() {
         </Route>
 
         <Route path="/detail/:params">
-            <Detail
-              shoes={shoes}
-              inventory={inventory}
-              inventoryEdit={inventoryEdit}
-            />
+          <Detail
+            shoes={shoes}
+            inventory={inventory}
+            inventoryEdit={inventoryEdit}
+          />
         </Route>
 
         <Route path="/:id">
