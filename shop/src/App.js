@@ -5,6 +5,7 @@ import data from "./asset/data";
 import { Link, Route, Switch } from "react-router-dom";
 import Detail from "./Detail";
 import axios from "axios";
+import Cart from "./Cart";
 
 export const inventoryContext = React.createContext();
 
@@ -82,9 +83,14 @@ function App() {
           />
         </Route>
 
+        <Route path="/cart">
+          <Cart />
+        </Route>
+
         <Route path="/:id">
           <div>아무거나 적었을 때 이거 보여짐</div>
         </Route>
+
       </Switch>
     </div>
   );
