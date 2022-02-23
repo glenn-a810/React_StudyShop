@@ -10,7 +10,11 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 
 let store = createStore(() => {
-  return [{ id: 0, name: "Shoe", quan: "2" }];
+  return [
+    { id: 0, name: "item1", quan: "2" },
+    { id: 1, name: "item2", quan: "5" },
+    { id: 2, name: "item3", quan: "8" },
+  ];
 });
 
 ReactDOM.render(

@@ -34,4 +34,3 @@ function stateProps(state) {
 }
 
 export default connect(stateProps)(Cart);
-// export default Cart;
